@@ -6,3 +6,37 @@ body {
 a {
   color: #00B7FF;
 }
+
+div {
+  background-color: antiquewhite;
+}
+
+#div1 {
+  margin-left: 15px;
+  height: 500px;
+  width: 50%;
+  float: left;
+  border: 4px solid blanchedalmond;
+}
+
+#div2 {
+  height: 250px;
+  width: 50%;
+  border: 4px solid blanchedalmond;
+}
+
+#div3 {
+  height: 250px;
+  width: 50%;
+  border: 4px solid blanchedalmond;
+}
+
+#div4 {
+  margin-top: 500px;
+  width: 90%;
+  border: 4px solid blanchedalmond;
+}
+
+.inner  {
+  padding: 5px;
+}
