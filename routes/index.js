@@ -9,12 +9,12 @@ router.get('/', function(req, res) {
 
 
 router.get('/dashboard', function(reg, res){
-  res.render('dashboard', { title: 'Turtles in the United States'});
+  res.render('dashboard');
 });
 
 router.post('/addTurtle', function(req, res) {
   dbclient.addTurtle(req.body);
-  res.render('dashboard', {title: 'Turtles in the United States'});
+  res.redirect('/dashboard');
 });
 
 
