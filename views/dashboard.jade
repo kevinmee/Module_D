@@ -3,21 +3,22 @@
 
 extends layout
 
-block header
+block content
    h1 #{title}
    hr
 
-block div1
-   p "test div1"
-
-
-block div2
-   p "test div2"
-
-
-block div3
-   p "test div3"
-
-
-block div4
-   p "test div4"
+   div
+      // name, species, location, age
+      form(action='/addTurtle', method='post')
+         div(id='turtleNameInput')
+            label(for='turtle_name') Name
+               input(id='turtle_name', type='text', value='', name='turtle_name')
+         div(id='turtleSpeciesInput')
+            label(for='turtle_species') Species
+               input(id='turtle_species', type='text', value='', name='turtle_species')
+         div(id='turtleAgeInput')
+            label(for='turtle_age') Age
+               input(id='turtle_age', type='text', value='', name='turtle_age')
+         div(id='turtleLocationInput')
+            label(for='turtle_location') Location
+               input(id='turtle_location', type='text', value='', name='turtle_location')
