@@ -39,7 +39,7 @@ div {
   border: 4px solid blanchedalmond;
 }
 
-#speciesData {
+.graph {
   width: 97%;
   height: 400px;
   text-align: center;

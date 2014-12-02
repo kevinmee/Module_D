@@ -1,6 +1,11 @@
 extends layout
 
 block div1
+   #knownTurtles.graph
+   button#species Species
+   button#location Location
+   button#age Age
+
    // name, species, location, age
    p Add another turtle into our database:
    form(action='/addTurtle', method='post')

@@ -19,5 +19,9 @@ router.post('/addTurtle', function(req, res) {
 router.get('/speciesWeight', dbclient.speciesWeight);
 router.get('/speciesAge', dbclient.speciesAge);
 
+router.get('/turtleSpecies', dbclient.turtleSpecies);
+router.get('/turtleLocation', dbclient.turtleLocation);
+router.get('/turtleAge', dbclient.turtleAge);
+
 
 module.exports = router;

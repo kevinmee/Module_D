@@ -115,4 +115,124 @@ exports.speciesAge = function(req, res) {
     c.end();
 }
 
+exports.turtleSpecies = function(req, res) {
+    var rows = [];
+    var outputArr = [];
+
+    var c = new Client();
+
+    c.connect({
+        host: '127.0.0.1',
+        user: 'cttibbetts',
+        password: 'cttibbetts_pw',
+        db: 'cttibbetts_db'
+    });
+
+    c.on('connect', function() { console.log('Client is connected!'); })
+        .on('error', function(err) { console.log('Client error: ' + err); })
+        .on('close', function(hadError) { console.log('Client closed'); });
+
+    c.query('SELECT species, count(species) as count FROM known_turtles GROUP by species')
+        .on('result', function(res) {
+            res.on('row', function(row) { console.log(row); rows.push(row); })
+                .on('error', function(err) { console.log('Result error: ' + err); })
+                .on('end', function(info) { console.log('Results'); });
+        })
+        .on('end', function() {
+            console.log('Done with all results');
+
+            for (var i = 0; i < rows.length; i++) {
+                outputArr[i] = {
+                    name: rows[i].species,
+                    data: [parseInt(rows[i].count)]
+                }
+            }
+
+            console.log(outputArr);
+            res.send(outputArr);
+        });
+
+    c.end();
+}
+
+exports.turtleLocation = function(req, res) {
+    var rows = [];
+    var outputArr = [];
+
+    var c = new Client();
+
+    c.connect({
+        host: '127.0.0.1',
+        user: 'cttibbetts',
+        password: 'cttibbetts_pw',
+        db: 'cttibbetts_db'
+    });
+
+    c.on('connect', function() { console.log('Client is connected!'); })
+        .on('error', function(err) { console.log('Client error: ' + err); })
+        .on('close', function(hadError) { console.log('Client closed'); });
+
+    c.query('SELECT location, count(location) as count FROM known_turtles GROUP by location')
+        .on('result', function(res) {
+            res.on('row', function(row) { console.log(row); rows.push(row); })
+                .on('error', function(err) { console.log('Result error: ' + err); })
+                .on('end', function(info) { console.log('Results'); });
+        })
+        .on('end', function() {
+            console.log('Done with all results');
+
+            for (var i = 0; i < rows.length; i++) {
+                outputArr[i] = {
+                    name: rows[i].location,
+                    data: [parseInt(rows[i].count)]
+                }
+            }
+
+            console.log(outputArr);
+            res.send(outputArr);
+        });
+
+    c.end();
+}
+
+exports.turtleAge = function(req, res) {
+    var rows = [];
+    var outputArr = [];
+
+    var c = new Client();
+
+    c.connect({
+        host: '127.0.0.1',
+        user: 'cttibbetts',
+        password: 'cttibbetts_pw',
+        db: 'cttibbetts_db'
+    });
+
+    c.on('connect', function() { console.log('Client is connected!'); })
+        .on('error', function(err) { console.log('Client error: ' + err); })
+        .on('close', function(hadError) { console.log('Client closed'); });
+
+    c.query('SELECT age, count(age) as count FROM known_turtles GROUP by age')
+        .on('result', function(res) {
+            res.on('row', function(row) { console.log(row); rows.push(row); })
+                .on('error', function(err) { console.log('Result error: ' + err); })
+                .on('end', function(info) { console.log('Results'); });
+        })
+        .on('end', function() {
+            console.log('Done with all results');
+
+            for (var i = 0; i < rows.length; i++) {
+                outputArr[i] = {
+                    name: rows[i].age,
+                    data: [parseInt(rows[i].count)]
+                }
+            }
+
+            console.log(outputArr);
+            res.send(outputArr);
+        });
+
+    c.end();
+}
+
 
