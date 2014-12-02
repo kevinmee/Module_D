@@ -4,7 +4,7 @@ var dbclient = require('../js/dbclient');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.redirect('dashboard');
 });
 
 
@@ -13,10 +13,8 @@ router.get('/dashboard', function(reg, res){
 });
 
 router.post('/addTurtle', function(req, res) {
-  dbclient.addTurtle(req.body);
-  res.redirect('/dashboard');
+  dbclient.addTurtle(req, res);
 });
-
 
 
 module.exports = router;
