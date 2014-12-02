@@ -34,6 +34,8 @@ $(function() {
 
         $.getJSON('/speciesWeight', function(data) {
             speciesData.series = data;
+            speciesData.title.text = 'Average Weight of Turtles by Species';
+            speciesData.xAxis.title.text = 'Weight in Pounds';
             var speciesWeightChart = new Highcharts.Chart(speciesData);
         });
     });
@@ -44,7 +46,9 @@ $(function() {
 
         $.getJSON('/speciesAge', function(data) {
             speciesData.series = data;
-            var speciesWeightChart = new Highcharts.Chart(speciesData);
+            speciesData.title.text = 'Average Life Expectency of Turtles by Species';
+            speciesData.xAxis.title.text = 'Life Expectency in Years';
+            var speciesAgeChart = new Highcharts.Chart(speciesData);
         });
     });
 
