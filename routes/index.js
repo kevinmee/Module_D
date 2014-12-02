@@ -23,5 +23,6 @@ router.get('/turtleSpecies', dbclient.turtleSpecies);
 router.get('/turtleLocation', dbclient.turtleLocation);
 router.get('/turtleAge', dbclient.turtleAge);
 
+router.get('/speciesDiet', dbclient.speciesDiet);
 
 module.exports = router;

@@ -13,6 +13,9 @@ $(function () {
         xAxis: {
             title: {
                 text: 'Location'
+            },
+            labels: {
+                enabled: false
             }
         },
         yAxis: {
@@ -61,7 +64,7 @@ $(function () {
         chart: {
             renderTo: 'speciesData',
             type: 'column',
-            marginLeft: 50,
+            marginLeft: 75,
             marginRight: 50
         },
         title: {
@@ -69,18 +72,21 @@ $(function () {
         },
         xAxis: {
             title: {
-                text: 'Weight in Pounds'
+                text: 'Species of Turtle'
+            },
+            labels: {
+                enabled: false
             }
         },
         yAxis: {
             title: {
-                text: 'Species of Turtle'
+                text: 'Weight in Pounds'
             }
         },
         series: []
     };
 
-    $.getJSON('/speciesWeight', function (data) {
+    $.getJSON('/speciesWeight', function(data) {
         speciesData.series = data;
         new Highcharts.Chart(speciesData);
     });
@@ -101,6 +107,35 @@ $(function () {
             new Highcharts.Chart(speciesData);
         });
     });
+
+
+    var dietData = {
+        chart: {
+            renderTo: 'dietData',
+            type: 'bar',
+            marginLeft: 50,
+            marginRight: 50
+        },
+        title: {
+            text: 'Diet of turtles'
+        },
+        xAxis: {
+            title: {
+                text: 'Food'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Species'
+            }
+        },
+        series: []
+    };
+
+    $.getJSON('/speciesDiet', function(data) {
+        dietData.series = data;
+        var speciesDietChart = new Highcharts.Chart(dietData);
+    })
 
 
 });
