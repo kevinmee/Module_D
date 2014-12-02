@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -12,10 +13,7 @@ div {
 }
 
 #div1 {
-  margin-left: 5px;
-  height: 247px;
-  width: 50%;
-  float: left;
+  width: 80%;
   border: 4px solid blanchedalmond;
 }
 
@@ -24,30 +22,32 @@ div {
 }
 
 #div2 {
-  margin-left: 53%;
-  height: 247px;
-  width: 40%;
+  margin-top: 10px;
+  width: 80%;
   border: 4px solid blanchedalmond;
 }
 
 #div3 {
-  margin-left: 53%;
   margin-top: 10px;
-  height: 245px;
-  width: 40%;
+  width: 80%;
   border: 4px solid blanchedalmond;
 }
 
 #div4 {
   margin-top: 10px;
-  margin-left: 5px;
-  height: 245px;
-  width: 50%;
+  width: 80%;
   border: 4px solid blanchedalmond;
+}
+
+#speciesData {
+  width: 97%;
+  text-align: center;
 }
 
 .inner  {
   padding: 5px;
+  text-align: center;
+
 }
 
 img {

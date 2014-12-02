@@ -29,10 +29,11 @@ block div1
          input(type='submit', value='Add Turtle')
 
 block div2
-   #speciesData.graph
    p This is a graph of all known Turtles
 block div3
    p Here is some information on the diets of the turtles as well as a nice picture
    img(src= 'images/tmnt.jpg', alt = 'image')
 block div4
-   p One more graph
+   #speciesData.graph
+   button#weightGraph Weight
+   button#ageGraph Life Expectency
