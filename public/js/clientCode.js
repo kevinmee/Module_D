@@ -24,6 +24,29 @@ $(function() {
         series: []
     };
 
+    var dietData = {
+        chart: {
+            renderTo: 'dietData',
+            type: 'bar',
+            marginLeft: 50,
+            marginRight: 50
+        },
+        title: {
+            text: 'Diet of turtles'
+        },
+        xAxis: {
+            title: {
+                text: 'Food'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Species'
+            }
+        },
+        series: []
+    };
+
     $.getJSON('/speciesWeight', function(data) {
         speciesData.series = data;
         var speciesWeightChart = new Highcharts.Chart(speciesData);
@@ -40,7 +63,7 @@ $(function() {
         });
     });
 
-    // Change Snack Consumption from bar to line
+
     $('#ageGraph').click(function() {
         speciesData.chart.type = "bar";
 

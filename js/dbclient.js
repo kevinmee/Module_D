@@ -116,3 +116,45 @@ exports.speciesAge = function(req, res) {
 }
 
 
+exports.speciesDiet = function(req, res) {
+    console.log('getting species diet');
+    var rows = [];
+    var outputArr = [];
+
+    var c = new Client();
+
+    c.connect({
+        host: '127.0.0.1',
+        user: 'cttibbetts',
+        password: 'cttibbetts_pw',
+        db: 'cttibbetts_db'
+    });
+
+    c.on('connect', function() { console.log('Client is connected!'); })
+        .on('error', function(err) { console.log('Client error: ' + err); })
+        .on('close', function(hadError) { console.log('Client closed'); });
+
+    c.query('SELECT species, diet FROM turtle_diet')
+        .on('result', function(res) {
+            res.on('row', function(row) { rows.push(row); })
+                .on('error', function(err) { console.log('Result error: ' + err); })
+                .on('end', function(info) { console.log('Results'); });
+        })
+        .on('end', function() {
+            console.log('Done with all results');
+
+            for (var i = 0; i < rows.length; i++) {
+                outputArr[i] = {
+                    name: rows[i].species,
+                    data: [parseInt(rows[i].diet)]
+                }
+            }
+
+            console.log(outputArr);
+            res.send(outputArr);
+        });
+
+    c.end();
+}
+
+
