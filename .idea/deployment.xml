@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" uploadOnCheckin="761aeeb1-8c7f-48f3-b54b-4b30f1416699">
+  <component name="PublishConfigData" autoUpload="Always" serverName="wpi" uploadOnCheckin="761aeeb1-8c7f-48f3-b54b-4b30f1416699">
     <serverData>
       <paths name="wpi">
         <serverdata>
@@ -11,5 +11,6 @@
       </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="wpi" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
