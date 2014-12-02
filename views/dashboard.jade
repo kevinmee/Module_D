@@ -5,10 +5,11 @@ block div1
    button#species Species
    button#location Location
    button#age Age
+   p Turtles have many qualities to them that make them unique. Some of the most well known turtles fight crime. Then there are some that are house-hold pets.
 
 block div2
    // name, species, location, age
-   p Add another turtle into our database:
+   p Add another turtle into our database, fill out the following information:
    form(action='/addTurtle', method='post')
       table
          tr
@@ -39,6 +40,7 @@ block div3
    img(src= 'images/tmnt.jpg', alt = 'image')
    #dietData.graph
 block div4
+   p Below is a graph displaying the weight and the life expectency of each species of turtle. Some turtles can weigh thousands of pounds! These turtles are often found in the zoo.
    #speciesData.graph
    button#weightGraph Weight
    button#ageGraph Life Expectency
