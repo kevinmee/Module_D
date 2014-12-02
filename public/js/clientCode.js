@@ -47,6 +47,11 @@ $(function() {
         series: []
     };
 
+    $.getJSON('/speciesDiet', function(data) {
+        dietData.series = data;
+        var speciesDietChart = new Highcharts.Chart(dietData);
+    })
+
     $.getJSON('/speciesWeight', function(data) {
         speciesData.series = data;
         var speciesWeightChart = new Highcharts.Chart(speciesData);

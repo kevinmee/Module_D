@@ -18,6 +18,6 @@ router.post('/addTurtle', function(req, res) {
 
 router.get('/speciesWeight', dbclient.speciesWeight);
 router.get('/speciesAge', dbclient.speciesAge);
-
+router.get('/speciesDiet', dbclient.speciesDiet);
 
 module.exports = router;
