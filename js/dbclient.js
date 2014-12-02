@@ -254,7 +254,7 @@ exports.speciesDiet = function(req, res) {
         .on('error', function(err) { console.log('Client error: ' + err); })
         .on('close', function(hadError) { console.log('Client closed'); });
 
-    c.query('SELECT species, diet FROM turtle_diet GROUP BY species')
+    c.query('SELECT diet, count(diet) AS count FROM turtle_diet GROUP BY diet')
         .on('result', function(res) {
             res.on('row', function(row) { rows.push(row); })
                 .on('error', function(err) { console.log('Result error: ' + err); })
@@ -265,8 +265,8 @@ exports.speciesDiet = function(req, res) {
 
             for (var i = 0; i < rows.length; i++) {
                 outputArr[i] = {
-                    name: rows[i].species,
-                    data: [parseInt(rows[i].diet)]
+                    name: rows[i].diet,
+                    data: [parseInt(rows[i].count)]
                 }
             }
 

@@ -112,22 +112,26 @@ $(function () {
     var dietData = {
         chart: {
             renderTo: 'dietData',
-            type: 'bar',
-            marginLeft: 50,
+            type: 'column',
+            marginLeft: 75,
             marginRight: 50
         },
         title: {
-            text: 'Diet of turtles'
+            text: 'Turtle species that have similar Diet'
         },
         xAxis: {
             title: {
                 text: 'Food'
+            },
+            labels: {
+                enabled: false
             }
         },
         yAxis: {
             title: {
-                text: 'Species'
-            }
+                text: 'Count'
+            },
+            allowDecimals: false
         },
         series: []
     };
