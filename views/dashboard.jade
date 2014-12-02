@@ -7,7 +7,7 @@ block content
    h1 #{title}
    hr
 
-   div
+   block div1
       // name, species, location, age
       form(action='/addTurtle', method='post')
          div(id='turtleNameInput')
@@ -24,3 +24,10 @@ block content
                input(id='turtle_location', type='text', value='', name='turtle_location')
          div(id='newTurtleSubmit')
             input(type='submit', value='Add Turtle')
+
+   block div2
+      p "test div2"
+   block div3
+      p "test div3"
+   block div4
+      p "test div4"
