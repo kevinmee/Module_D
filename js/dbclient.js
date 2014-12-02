@@ -34,6 +34,7 @@ exports.addTurtle = function(req, res) {
 }
 
 exports.speciesWeight = function(req, res) {
+    console.log('getting species weight');
     var rows = [];
     var outputArr = [];
 
@@ -74,6 +75,7 @@ exports.speciesWeight = function(req, res) {
 }
 
 exports.speciesAge = function(req, res) {
+    console.log('getting species age');
     var rows = [];
     var outputArr = [];
 

@@ -44,7 +44,7 @@ $(function() {
 
         $.getJSON('/speciesAge', function(data) {
             speciesData.series = data;
-            var speciesWeightChart = new Highcharts.Chart(speciesData);
+            var speciesAgeChart = new Highcharts.Chart(speciesData);
         });
     });
 
