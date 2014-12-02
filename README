@@ -1,0 +1,46 @@
+Design Layout Document
+
+Request flow:
+    The client page makes requests to the server for data to populate the graphs.
+    The router points the server to dbclient.js.
+    dbclient.js makes the appropriate SQL call to our database.
+    The database returns the result.
+    dbclinet.js turns it into a structure that can be used by highcharts, and sends.
+    The client page renders the new graph object
+
+    The form POST call is similar, but writes to the database instead, and re-renders the page.
+
+Templates/Fragments:
+    Our page uses the jade templates layout.jade and index.jade under views/
+
+    layout.jade provides a basic page structure.
+    index.jade is rendered by the router, and contains the information and the divs that our
+        page needs
+
+div1 - turtle information graph
+     - buttons to change
+div2 - form - table - input fields
+div3 - text
+     - image
+     - diet information graph
+div4 - species information graph
+     - buttons to change
+
+
+Express:
+    modified:
+        routes/index.js - put in routes for GET and POST calls from the client
+
+    added:
+        js/dbclient.js - methods to access the database and get data
+
+    router.post('/addTurtle', ... );                         // add a new turtle to the database
+
+    router.get('/speciesWeight', dbclient.speciesWeight);    // get average weight by species
+    router.get('/speciesAge', dbclient.speciesAge);          // get average age by species
+
+    router.get('/turtleSpecies', dbclient.turtleSpecies);    // get count of turtles by species
+    router.get('/turtleLocation', dbclient.turtleLocation);  // get count of turtles by location
+    router.get('/turtleAge', dbclient.turtleAge);            // get count of turtles by age
+
+    router.get('/speciesDiet', dbclient.speciesDiet);        // get count of species by diet
