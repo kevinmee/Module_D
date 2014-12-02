@@ -6,6 +6,7 @@ block div1
    button#location Location
    button#age Age
 
+block div2
    // name, species, location, age
    p Add another turtle into our database:
    form(action='/addTurtle', method='post')
@@ -32,9 +33,7 @@ block div1
                input(id='turtle_location', type='text', value='', name='turtle_location')
       div(id='newTurtleSubmit')
          input(type='submit', value='Add Turtle')
-
-block div2
-   p This is a graph of all known Turtles
+         
 block div3
    p Here is some information on the diets of the turtles as well as a nice picture
    img(src= 'images/tmnt.jpg', alt = 'image')
