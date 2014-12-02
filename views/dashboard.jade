@@ -4,18 +4,27 @@ block div1
    // name, species, location, age
    p Add another turtle into our database:
    form(action='/addTurtle', method='post')
-      div(id='turtleNameInput')
-         label(for='turtle_name') Name
-            input(id='turtle_name', type='text', value='', name='turtle_name')
-      div(id='turtleSpeciesInput')
-         label(for='turtle_species') Species
-            input(id='turtle_species', type='text', value='', name='turtle_species')
-      div(id='turtleAgeInput')
-         label(for='turtle_age') Age
-            input(id='turtle_age', type='text', value='', name='turtle_age')
-      div(id='turtleLocationInput')
-         label(for='turtle_location') Location
-            input(id='turtle_location', type='text', value='', name='turtle_location')
+      table
+         tr
+            td
+               | Name:
+            td
+               input(id='turtle_name', type='text', value='', name='turtle_name')
+         tr
+            td
+               | Species:
+            td
+               input(id='turtle_species', type='text', value='', name='turtle_species')
+         tr
+            td
+               | Age:
+            td
+               input(id='turtle_age', type='text', value='', name='turtle_age')
+         tr
+            td
+               | Location:
+            td
+               input(id='turtle_location', type='text', value='', name='turtle_location')
       div(id='newTurtleSubmit')
          input(type='submit', value='Add Turtle')
 
