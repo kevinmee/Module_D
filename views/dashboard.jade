@@ -2,6 +2,7 @@ extends layout
 
 block div1
    // name, species, location, age
+   p Add another turtle into our database:
    form(action='/addTurtle', method='post')
       div(id='turtleNameInput')
          label(for='turtle_name') Name
